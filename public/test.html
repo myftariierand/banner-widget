@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="src/style.css" />
+    </head>
+    <body>
+        <h1 id="header"></h1>
+        <script>
+            !(function (e, n, t, i, a, s, r) {
+                ;(e["JS-Widget"] = i),
+                    (e[i] =
+                        e[i] ||
+                        function () {
+                            ;(e[i].q = e[i].q || []).push(arguments)
+                        }),
+                    (s = n.createElement(t)),
+                    (r = n.getElementsByTagName(t)[0]),
+                    (s.id = i),
+                    (s.src = a),
+                    (s.async = 1),
+                    r.parentNode.insertBefore(s, r)
+            })(
+                window,
+                document,
+                "script",
+                "mb",
+                "https://cdn.jsdelivr.net/gh/myftariierand/banner-widget@main/dist/bundle.js"
+            ),
+                mb("init", {
+                    containerId: "",
+                    spaceId: "${spaceId}",
+                    skinId: "${skinId}",
+                    autoplay: "${space.autoplay}",
+                    infiniteLoop: "${space.infiniteLoop}",
+                    navigation: "${space.navigations}",
+                    pauseOnHover: "${space.pauseOnHover}",
+                    transition: "${space.transition}",
+                    transitionSpeed: "${space.transitionSpeed}",
+                })
+        </script>
+    </body>
+</html>
