@@ -9,7 +9,7 @@ import "swiper/css/effect-fade"
 import { getBanners, onBannerView, onBannerClick } from "./api"
 import { getDetails } from "./utils"
 import slider from "./html/slider.html"
-// import "./style/style.css"
+import "./style/style.css"
 
 export async function init(config) {
     const { containerId, spaceId, skinId } = config
