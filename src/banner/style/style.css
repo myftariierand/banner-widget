@@ -1,0 +1,15 @@
+:root {
+    --swiper-theme-color: #fff;
+    --swiper-navigation-size: 24px;
+}
+
+.swiper-pagination {
+    top: 8px !important;
+    bottom: auto !important;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

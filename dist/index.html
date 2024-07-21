@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Banner Demo</title>
+    </head>
+    <body>
+        <div id="banner"></div>
+        <script>
+            ;(function (w, d, s, o, f, js, fjs) {
+                w["JS-Widget"] = o
+                w[o] =
+                    w[o] ||
+                    function () {
+                        ;(w[o].q = w[o].q || []).push(arguments)
+                    }
+                ;(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0])
+                js.id = o
+                js.src = f
+                js.async = 1
+                fjs.parentNode.insertBefore(js, fjs)
+            })(window, document, "script", "mw", "./bundle.js")
+            mw("init", {
+                containerId: "banner",
+                spaceId: "65e4d43cf66a1e6e4f6b095a",
+                skinId: "65e4bbce6da8602fae6afad7",
+                autoplay: "yes",
+                infiniteLoop: "no",
+                navigation: "arrows - dots",
+                pauseOnHover: "yes",
+                transition: "slide",
+                transitionSpeed: "2",
+            })
+        </script>
+    </body>
+</html>
