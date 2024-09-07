@@ -78,5 +78,7 @@ img {
     display: grid;
     align-items: center;
     border-style: solid;
+    text-decoration: none;
     z-index: 1;
+    color: inherit;
 }

@@ -109,6 +109,22 @@ export function createBanner(banner) {
         ? template.md
         : template.lg
 
+    const fontFamilies = [
+        templateData.date.fontFamily,
+        templateData.time.fontFamily,
+        templateData.fontTeam1.fontFamily,
+        templateData.fontTeam2.fontFamily,
+        templateData.button.font,
+    ]
+        .filter((font) => font !== "")
+        .map((font) => `${font}:400`)
+
+    WebFont.load({
+        google: {
+            families: fontFamilies,
+        },
+    })
+
     const bannerContainer = document.createElement("div")
     bannerContainer.id = "banner-container"
 
@@ -131,9 +147,13 @@ export function createBanner(banner) {
                 year: "numeric",
             }).format(new Date(banner.schedule))
 
-            const { fontColor, position } = templateData.date
-            date.style = `color: ${fontColor}; left: ${position[0]}px; top: ${position[1]}px`
-
+            const { fontColor, position, fontFamily } = templateData.date
+            date.style = `
+                color: ${fontColor}; 
+                left: ${position[0]}px; 
+                top: ${position[1]}px;
+                font-family: ${fontFamily};
+            `
             dateTime.appendChild(date)
         }
 
@@ -150,9 +170,13 @@ export function createBanner(banner) {
                 hour12: false,
             }).format(new Date(adjustedDate))
 
-            const { fontColor, position } = templateData.time
-            time.style = `color: ${fontColor}; left: ${position[0]}px; top: ${position[1]}px`
-
+            const { fontColor, position, fontFamily } = templateData.time
+            time.style = `
+                color: ${fontColor}; 
+                left: ${position[0]}px; 
+                top: ${position[1]}px;
+                font-family: ${fontFamily};
+            `
             dateTime.appendChild(time)
         }
 
@@ -176,7 +200,12 @@ export function createBanner(banner) {
         const finalWidth = Boolean(size[0]) ? `${size[0]}px` : "114px"
         const finalHeight = Boolean(size[1]) ? `${size[1]}px` : "140px"
 
-        homeTeamImg.style = `width: ${finalWidth}; height: ${finalHeight}; left: ${position[0]}px; top: ${position[1]}px`
+        homeTeamImg.style = `
+            width: ${finalWidth}; 
+            height: ${finalHeight}; 
+            left: ${position[0]}px; 
+            top: ${position[1]}px;
+        `
 
         homeTeam.appendChild(homeTeamImg)
     }
@@ -191,7 +220,12 @@ export function createBanner(banner) {
         const finalWidth = Boolean(size[0]) ? `${size[0]}px` : "114px"
         const finalHeight = Boolean(size[1]) ? `${size[1]}px` : "140px"
 
-        awayTeamImg.style = `width: ${finalWidth}; height: ${finalHeight}; left: ${position[0]}px; top: ${position[1]}px`
+        awayTeamImg.style = `
+            width: ${finalWidth}; 
+            height: ${finalHeight}; 
+            left: ${position[0]}px; 
+            top: ${position[1]}px;
+        `
 
         awayTeam.appendChild(awayTeamImg)
     }
@@ -201,21 +235,31 @@ export function createBanner(banner) {
         homeTeamTitle.id = "home-team-title"
         homeTeamTitle.innerText = banner.event[0].name
 
-        const { fontColor, position } = templateData.fontTeam1
+        const { fontColor, position, fontFamily } = templateData.fontTeam1
 
-        homeTeamTitle.style = `color: ${fontColor}; left: ${position[0]}px; top: ${position[1]}px`
+        homeTeamTitle.style = `
+            color: ${fontColor}; 
+            left: ${position[0]}px; 
+            top: ${position[1]}px; 
+            font-family: ${fontFamily};
+        `
 
         homeTeam.appendChild(homeTeamTitle)
     }
 
-    if (templateData.fontTeam1.visible) {
+    if (templateData.fontTeam2.visible) {
         const awayTeamTitle = document.createElement("div")
         awayTeamTitle.id = "away-team-title"
         awayTeamTitle.innerText = banner.event[1].name
 
-        const { fontColor, position } = templateData.fontTeam2
+        const { fontColor, position, fontFamily } = templateData.fontTeam2
 
-        awayTeamTitle.style = `color: ${fontColor}; left: ${position[0]}px; top: ${position[1]}px`
+        awayTeamTitle.style = `
+            color: ${fontColor}; 
+            left: ${position[0]}px; 
+            top: ${position[1]}px;
+            font-family: ${fontFamily};
+        `
 
         awayTeam.appendChild(awayTeamTitle)
     }
@@ -227,8 +271,15 @@ export function createBanner(banner) {
         button.href = banner.buttonLink
         button.target = "_blank"
 
-        const { background, border, borderRadius, position, size, textAlign } =
-            templateData.button
+        const {
+            background,
+            border,
+            borderRadius,
+            position,
+            size,
+            textAlign,
+            font,
+        } = templateData.button
 
         button.style = `
             background-color: ${background}; 
@@ -243,6 +294,7 @@ export function createBanner(banner) {
             left: ${position[0]}px;
             bottom: ${position[1]}px;
             text-align: ${textAlign};
+            font-family: ${font};
         `
 
         bannerContainer.appendChild(button)
