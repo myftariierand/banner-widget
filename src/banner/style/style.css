@@ -13,3 +13,70 @@ img {
     height: 100%;
     object-fit: cover;
 }
+
+#banner-container {
+    /* width: 800px; */
+    height: 400px;
+    position: relative;
+    color: #fff;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+#date-time {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#teams {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 48px;
+}
+
+#home-team,
+#away-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+#home-team-logo,
+#away-team-logo {
+    object-fit: contain;
+}
+
+#date,
+#time,
+#home-team-logo,
+#away-team-logo,
+#home-team-title,
+#away-team-title {
+    position: relative;
+}
+
+#button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 40px;
+    display: grid;
+    align-items: center;
+    border-style: solid;
+    z-index: 1;
+}

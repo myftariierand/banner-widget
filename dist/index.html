@@ -7,31 +7,33 @@
     </head>
     <body>
         <div id="banner"></div>
+
         <script>
-            ;(function (w, d, s, o, f, js, fjs) {
-                w["JS-Widget"] = o
-                w[o] =
-                    w[o] ||
-                    function () {
-                        ;(w[o].q = w[o].q || []).push(arguments)
-                    }
-                ;(js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0])
-                js.id = o
-                js.src = f
-                js.async = 1
-                fjs.parentNode.insertBefore(js, fjs)
-            })(window, document, "script", "mw", "./bundle.js")
-            mw("init", {
-                containerId: "banner",
-                spaceId: "65e4d43cf66a1e6e4f6b095a",
-                skinId: "65e4bbce6da8602fae6afad7",
-                autoplay: "yes",
-                infiniteLoop: "no",
-                navigation: "arrows - dots",
-                pauseOnHover: "yes",
-                transition: "slide",
-                transitionSpeed: "2",
-            })
+            !(function (e, n, t, i, a, s, r) {
+                ;(e["JS-Widget"] = i),
+                    (e[i] =
+                        e[i] ||
+                        function () {
+                            ;(e[i].q = e[i].q || []).push(arguments)
+                        }),
+                    (s = n.createElement(t)),
+                    (r = n.getElementsByTagName(t)[0]),
+                    (s.id = i),
+                    (s.src = a),
+                    (s.async = 1),
+                    r.parentNode.insertBefore(s, r)
+            })(window, document, "script", "mb", "./bundle.js"),
+                mb("init", {
+                    containerId: "banner",
+                    spaceId: "66c853a0e45bb05f61fe4877",
+                    skinId: "66c6015c6f641fe2013eddd8",
+                    autoplay: "no",
+                    infiniteLoop: "yes",
+                    navigation: "dots & arrows",
+                    pauseOnHover: "yes",
+                    transition: "slide",
+                    transitionSpeed: "3",
+                })
         </script>
     </body>
 </html>
