@@ -119,11 +119,13 @@ export function createBanner(banner) {
         .filter((font) => font !== "")
         .map((font) => `${font}:400`)
 
-    WebFont.load({
-        google: {
-            families: fontFamilies,
-        },
-    })
+    if (fontFamilies.length) {
+        WebFont.load({
+            google: {
+                families: fontFamilies,
+            },
+        })
+    }
 
     const bannerContainer = document.createElement("div")
     bannerContainer.id = "banner-container"
